@@ -3,6 +3,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 /*! flatpickr v2.1.1, @license MIT */
+
 function Flatpickr(element, config) {
 	var self = this;
 
@@ -786,7 +787,7 @@ function Flatpickr(element, config) {
 		var top = void 0,
 		    left = window.pageXOffset + inputBounds.left;
 
-		if (distanceFromBottom < calendarHeight) {
+		if (self.config.position == "above" || self.config.position != "below" && distanceFromBottom < calendarHeight) {
 			top = window.pageYOffset - calendarHeight + inputBounds.top - 2;
 			self.calendarContainer.classList.remove("arrowTop");
 			self.calendarContainer.classList.add("arrowBottom");
